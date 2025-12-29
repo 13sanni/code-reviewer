@@ -1,5 +1,5 @@
-const express = require('express');
-const app = express();
+import express from 'express';
+export const app = express();
 
 
 
@@ -12,11 +12,5 @@ app.get('/', (req, res) => {
 
 
 
+export default app;
 
-
-
-
-
-
-
-module.exports = app;
