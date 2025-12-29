@@ -7,10 +7,15 @@ const ai = new GoogleGenAI({
 
 
 
-export async function main(prompt) {
+export async function main(code) {
   const response = await ai.models.generateContent({
     model: "gemini-2.5-flash",
-    contents: prompt,
+    systeminstructions: `You are a code reviewer.
+    first you check code is good or bad, then you check the error,
+    then you do the constructive crtisim and a list of problem in code and then so provide the solution for each error and in last give a 
+    better version of code  
+    try to give clean and best code.`,
+    contents: code,
   });
 
   return response.text;

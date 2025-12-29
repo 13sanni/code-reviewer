@@ -2,6 +2,6 @@ import { Router } from "express";
 import { getAIResponse } from "../controller/ai.controller.js";
 const router = Router();
 
-router.get("/", getAIResponse);
+router.post("/", getAIResponse);
 
 export default router;
